@@ -50,9 +50,9 @@ nav >a{
   line-height: 2;
 }
 nav>a:hover{
-
   text-decoration-color: var(--color-text);
   text-decoration:underline;
+  font-size: 32px;
 }
 section{
   display: block;
@@ -151,6 +151,10 @@ section{
   display: flex;
   gap: 20px;
   justify-content: center;
+  max-width: 200px;
+  max-height: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .links a{
   background-color: #004245;
