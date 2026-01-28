@@ -293,11 +293,9 @@ footer{
     grid-template-columns: repeat(3, 1fr);
   }
   .project img:hover {
-    transform: rotateZ(360deg);
-    transform: rotateX(360deg);
-    transform: rotateY(360deg);
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
   /* Optional: Add a smooth transition effect */
-    transition: transform 0.8s ease
+    transition: transform 3s ease
   }
   #info p{
   font-size: 32px;
