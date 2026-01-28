@@ -10,7 +10,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 ul {
   list-style: none;
 }
@@ -46,7 +48,7 @@ nav{
 nav >a{
   color: var(--color-text);
   text-decoration: none;
-  font-size:8px;
+  font-size:17px;
   line-height: 2;
 }
 section{
@@ -137,7 +139,8 @@ section{
   border-radius: 30%;
   padding: 20px;
   border: 10px solid white;
-  transition: transform 0.3s ease;
+  transition: transform 1s linear;
+  /*transition: transform 0.3s ease;*/
 }
 .project p{
   line-height: 1.5;
@@ -263,7 +266,11 @@ footer{
     grid-template-columns: repeat(2, 1fr);
   }
   .project img:hover {
-  transform: scale(1.05);
+    transform: rotateZ(360deg);
+    transform: rotateX(360deg);
+    transform: rotateY(360deg);
+  /* Optional: Add a smooth transition effect */
+    transition: transform 0.8s ease
   }
   #info p{
   font-size: 30px;
@@ -276,7 +283,7 @@ footer{
   text-decoration-color: var(--color-text);
   text-decoration:underline;
   font-size: 32px;
-  transition: transform 0.3s ease;
+  transform: rotateZ(360deg);
   }
 }
 
@@ -286,7 +293,11 @@ footer{
     grid-template-columns: repeat(3, 1fr);
   }
   .project img:hover {
-  transform: scale(1.05);
+    transform: rotateZ(360deg);
+    transform: rotateX(360deg);
+    transform: rotateY(360deg);
+  /* Optional: Add a smooth transition effect */
+    transition: transform 0.8s ease
   }
   #info p{
   font-size: 32px;
@@ -299,6 +310,7 @@ footer{
   text-decoration-color: var(--color-text);
   text-decoration:underline;
   font-size: 32px;
-  transition: transform 0.3s ease;
+  transform: rotateZ(360deg);
+  transition: transform 0.8s ease;
   }
 }
