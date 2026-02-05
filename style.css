@@ -3,12 +3,44 @@
   --color-text: aliceblue;
   --color-second:#5f9ea0;
   --color-button:#004245;
-  --font-family: Arial, sans-serif;
+  --font-family: monospace;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+@keyframes springBounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-35px) scale(1.05);
+  }
+  50% {
+    transform: translateY(0) scale(0.98);
+  }
+  65% {
+    transform: translateY(-12px) scale(1.02);
+  }
+  80% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+.logo {
+  max-width: 100px;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  transition: border-radius 0.4s ease;
+  cursor: pointer;
+}
+.logo.spring {
+  animation: springBounce 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-radius: 50%;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
 }
 html{
   scroll-behavior: smooth;
@@ -23,6 +55,7 @@ img {
 body{
    background-color: var(--color-background);
    color: var(--color-text);
+   font-family: var(--font-family);
 }
 header{
   background-color: var(--color-second);
@@ -185,6 +218,8 @@ form{
   background-color: aliceblue;
   border-radius: 15%;
   padding: 3%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 .enterInfo{
   flex: 1;
@@ -261,14 +296,15 @@ footer{
   text-align: center;
   padding: 20px;
 }
+.highlight{
+  border: 8px solid white;
+}
 @media (min-width: 768px) {
   #projectGrid{
     grid-template-columns: repeat(2, 1fr);
   }
   .project img:hover {
-    transform: rotateZ(360deg);
-    transform: rotateX(360deg);
-    transform: rotateY(360deg);
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
   /* Optional: Add a smooth transition effect */
     transition: transform 0.8s ease
   }
@@ -311,4 +347,11 @@ footer{
   transform: rotateZ(360deg);
   transition: transform 0.8s ease;
   }
+  /*Accessibility*/
+  @media (prefers-reduced-motion: reduce) {
+  .logo.spring {
+    animation: none;
+    border-radius: 50%;
+  }
+}
 }
